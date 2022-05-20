@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 31
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.droidoxy.easymoneyrewards"
+        minSdkVersion 21
+        targetSdkVersion 31
+        versionCode 38
+        versionName "3.8"
+
+        multiDexEnabled true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+// Maven Repositories
+repositories {
+
+    google()
+    mavenCentral()
+    flatDir { dirs 'libs' }
+
+}
+
+dependencies {
+
+    // test Libraries
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.13.2'
+
+    // AndroidX Support Libraries
+    implementation 'androidx.browser:browser:1.4.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.6.0-alpha02'
+
+    // MultiDex Dependency
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    // Other Libraries
+    implementation(name: 'libvids', ext: 'aar')
+    implementation 'com.yashdev.lib:libspin:1.0.0'
+    implementation 'com.yashdev.lib:easyprefs:1.0.3'
+    implementation 'com.yashdev.lib:countdowntimer:1.0.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.mcxiaoke.volley:library:1.0.18'
+    implementation 'com.github.d-max:spots-dialog:0.7@aar'
+    implementation 'com.github.paolorotolo:appintro:4.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'com.github.f0ris.sweetalert:library:1.6.2'
+
+    // Facebook Dependency
+    implementation 'com.facebook.android:facebook-login:4.34.0'
+
+    // Google Libraries
+    implementation 'com.google.android.gms:play-services-ads:20.5.0'
+    implementation 'com.google.android.gms:play-services-auth:20.0.1'
+
+    // Firebase Libraries
+    implementation 'com.google.firebase:firebase-analytics:20.0.2'
+    implementation 'com.google.firebase:firebase-messaging:23.0.0'
+}
+
+apply plugin: 'com.google.gms.google-services'

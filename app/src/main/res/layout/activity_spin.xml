@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/bg"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_spin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"/>
+
+    <ImageView
+        android:id="@+id/spinLogo"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_spin_logo"
+        android:layout_marginEnd="@dimen/space50"
+        android:layout_marginTop="@dimen/space50"
+        android:layout_marginLeft="@dimen/space50"
+        android:layout_marginStart="@dimen/space50"
+        android:layout_marginRight="@dimen/space50"
+        android:contentDescription="@string/app_name"/>
+
+    <com.yashdev.libspin.SpinWheel
+        android:id="@+id/spinWheel"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        app:spnwTopTextColor="#263238"
+        app:spnwBackgroundColor="#FF9800"
+        app:spnwCenterImage="@drawable/ic_wheel"
+        app:spnwCursor="@drawable/ic_cursor"
+        android:layout_centerInParent="true" />
+
+    <Button
+        android:textStyle="bold"
+        android:text="@string/spin"
+        android:id="@+id/spinButton"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_22"
+        android:layout_centerHorizontal="true"
+        android:layout_width="@dimen/space170"
+        android:layout_height="@dimen/space60"
+        android:background="@drawable/button_spin"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/space50"/>
+
+</RelativeLayout>

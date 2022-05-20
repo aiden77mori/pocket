@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:id="@+id/single_item"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="10dp"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:background="@drawable/item">
+
+    <TextView
+        android:id="@+id/money"
+        android:layout_marginTop="@dimen/space5"
+        android:layout_marginRight="@dimen/space5"
+        android:paddingRight="@dimen/space10"
+        android:paddingLeft="@dimen/space10"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space20"
+        android:background="@drawable/redeem_radius"
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:textColor="@color/white"
+        />
+
+    <ImageView
+        android:id="@+id/image"
+        android:gravity="center"
+        android:layout_width="@dimen/space150"
+        android:layout_height="@dimen/space150"
+        android:layout_marginTop="@dimen/space10"
+        android:layout_weight="0.9"
+        />
+
+    <LinearLayout
+        android:id="@+id/offersTopSpace"
+        android:layout_marginTop="@dimen/space10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space1"
+        android:orientation="vertical"
+        android:background="@color/grey_200"/>
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+
+
+</LinearLayout>

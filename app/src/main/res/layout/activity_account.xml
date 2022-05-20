@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/layout_proccess"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:id="@+id/processing_image"
+            android:layout_marginTop="@dimen/space100"
+            android:layout_centerHorizontal="true" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:paddingTop="@dimen/space100"
+            android:indeterminateTint="@color/colorPrimaryDark"
+            android:layout_below="@+id/processing_image"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <com.droidoxy.easymoneyrewards.views.TextView_Lato
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/processing_text"
+            android:text="@string/processing_wait"
+            android:layout_marginTop="@dimen/space50"
+            android:visibility="visible"
+            android:layout_below="@+id/progressBar"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_verify"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearotp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space30"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/otp_banner"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="@dimen/space20"
+                        android:layout_height="@dimen/space120">
+
+                        <ImageView
+                            android:id="@+id/account_verify_image"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/ic_inbox"
+                            android:layout_height="@dimen/space100"
+                            android:layout_gravity="bottom"
+                            android:contentDescription="@string/app_name" />
+
+                    </LinearLayout>
+
+                    <com.droidoxy.easymoneyrewards.views.TextView_Lato
+                        android:id="@+id/otptext"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space20"
+                        android:gravity="center"
+                        android:text="@string/account_verification"
+                        android:textColor="@color/text_color"
+                        android:textSize="20sp" />
+
+                    <com.droidoxy.easymoneyrewards.views.TextView_Lato
+                        android:id="@+id/otpsubText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/space40"
+                        android:layout_marginRight="@dimen/space40"
+                        android:layout_marginTop="@dimen/space5"
+                        android:gravity="center"
+                        android:lines="2"
+                        android:text="@string/otp_sent_text"
+                        android:textColor="@color/text_color"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+                <!--****otp****-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/space60">
+
+                    <com.droidoxy.easymoneyrewards.views.EditText_Lato
+                        android:id="@+id/otp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColorHint="#26515b6e"
+                        android:hint="@string/placeholder"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textSize="16sp"
+                        android:textColor="@color/text_color"
+                        android:background="@android:color/transparent"/>
+
+                    <View
+                        android:layout_marginTop="@dimen/space12"
+                        android:layout_width="@dimen/space60"
+                        android:layout_height="0.5dp"
+                        android:background="@color/colorPrimary" />
+
+                    <com.droidoxy.easymoneyrewards.views.TextView_Lato
+                        android:layout_width="match_parent"
+                        android:id="@+id/didntReceivedotp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space40"
+                        android:gravity="center"
+                        android:visibility="visible"
+                        android:text="@string/didntReceivedotp"
+                        android:textColor="@color/text_color"
+                        android:textSize="12sp"/>
+
+                    <com.droidoxy.easymoneyrewards.views.TextView_Lato
+                        android:id="@+id/resend"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/space5"
+                        android:visibility="visible"
+                        android:gravity="center"
+                        android:text="@string/resendCode"
+                        android:textColor="@color/green"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <View
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space280"/>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:elevation="@dimen/space10"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_verify"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/space20"
+            android:layout_marginLeft="@dimen/space20"
+            android:layout_marginRight="@dimen/space20"
+            android:textColor="@color/white"
+            android:text="@string/confirm_otp"
+            android:background="@drawable/button_primary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:layout_below="@+id/btn_verify"
+            android:layout_centerHorizontal="true"
+            android:textStyle="normal"
+            android:layout_marginTop="@dimen/space20"
+            android:id="@+id/logged_in_as"
+            android:text="@string/logged_in_as"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_below="@+id/logged_in_as"
+            android:paddingTop="@dimen/space15">
+
+            <LinearLayout
+                android:layout_width="@dimen/space0"
+                android:layout_height="@dimen/space50"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.droidoxy.easymoneyrewards.views.Textview_lato_thin
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/contact"
+                    android:id="@+id/contact"
+                    android:layout_marginLeft="@dimen/space50"
+                    android:layout_marginStart="@dimen/space50"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/space1"
+                android:layout_height="@dimen/space20"
+                android:background="@color/grey_600"/>
+
+            <LinearLayout
+                android:layout_width="@dimen/space0"
+                android:layout_height="@dimen/space50"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.droidoxy.easymoneyrewards.views.Textview_lato_thin
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/logout"
+                    android:id="@+id/logout"
+                    android:layout_marginRight="@dimen/space50"
+                    android:layout_marginEnd="@dimen/space50"
+                    android:textSize="14sp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

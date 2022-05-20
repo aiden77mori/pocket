@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/login_background_color"
+    android:orientation="vertical"
+    android:windowSoftInputMode="stateHidden"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="0.9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/green_light"
+                    android:textSize="@dimen/text_size_30"
+                    android:paddingLeft="@dimen/space16"
+                    android:paddingRight="@dimen/space0"
+                    android:text="@string/welcome"/>
+                <TextView
+                    android:id="@+id/account_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_20"
+                    android:paddingLeft="@dimen/space16"
+                    android:paddingStart="@dimen/space16"
+                    android:paddingRight="@dimen/space0"
+                    android:paddingEnd="@dimen/space0"/>
+                <TextView
+                    android:id="@+id/account_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_20"
+                    android:paddingLeft="@dimen/space16"
+                    android:paddingStart="@dimen/space16"
+                    android:paddingRight="@dimen/space0"
+                    android:paddingEnd="@dimen/space0"/>
+            </LinearLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/offerWallsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="25dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="@dimen/space12"
+                    android:textSize="@dimen/text_size_20"
+                    android:paddingLeft="@dimen/space16"
+                    android:paddingStart="@dimen/space16"
+                    android:paddingRight="@dimen/space0"
+                    android:paddingEnd="@dimen/space0"
+                    android:layout_marginBottom="@dimen/space12"
+                    android:text="@string/offerWalls"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:paddingRight="@dimen/space16"
+                    android:gravity="right">
+
+                    <TextView
+                        android:id="@+id/liveLeads"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:layout_marginTop="@dimen/space12"
+                        android:textSize="18sp"
+                        android:paddingLeft="@dimen/space0"
+                        android:paddingStart="@dimen/space16"
+                        android:paddingRight="@dimen/space16"
+                        android:paddingEnd="@dimen/space0"
+                        android:layout_marginBottom="@dimen/space12"
+                        android:text="@string/liveleads"/>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/offersTopSpace"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space2"
+                android:orientation="vertical"
+                android:background="@color/bg_color" />
+
+        </LinearLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/main"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        android:orientation="vertical">
+
+                        <!--******* Offerwalls ***********-->
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/offerwalls_list"
+                            android:nestedScrollingEnabled="false"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:clipToPadding="false" />
+
+
+                        <ProgressBar
+                            android:id="@+id/progressBarOfferwalls"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:layout_marginTop="@dimen/space40"
+                            android:layout_marginBottom="@dimen/space40"
+                            android:layout_gravity="center"
+                            android:indeterminateTint="@color/colorPrimary" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+</LinearLayout>
